@@ -24,6 +24,11 @@
 
 /*=======================================================================*/
 
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
 /* HEADER */
 header h1 {
     font-family: var(--playfair-font-family);
@@ -33,7 +38,7 @@ header h1 {
     margin: 2rem 2.563rem 0.75rem 0.75rem;
 }
 
-header img { 
+header img {
     padding: 0.938rem 0.75rem 0 0.75rem;
 }
 header p {
