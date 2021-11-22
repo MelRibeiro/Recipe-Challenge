@@ -1,0 +1,56 @@
+/* VARIABLES */
+
+:root {
+    /*colors variables */
+    --paragraph-color: hsla(0, 0%, 31%, 1);
+    --title-color: hsla(0, 0%, 0%, 1);
+    --list-and-serving-color: hsla(28, 87%, 62%, 1);
+    --creater-challenge-color: hsla(0, 0%, 51%, 1);
+    --source-color: hsla(0, 0%, 74%, 1);
+
+
+    /* font-family variables */
+    --playfair-font-family: 'Playfair Display', sans-serif;
+    --montserrat-font-family: 'Montserrat',  sans-serif;
+
+}
+
+/* RESET CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*=======================================================================*/
+
+/* HEADER */
+header h1 {
+    font-family: var(--playfair-font-family);
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin: 2rem 2.563rem 0.75rem 0.75rem;
+}
+
+header img { 
+    padding: 0.938rem 0.75rem 0 0.75rem;
+}
+header p {
+    font-family: var(--montserrat-font-family);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 0.938rem;
+    width: 20rem;
+    height: 5.5rem;
+    margin: 0.75rem 1.188rem 0 2.25rem;
+}
+
+/* CHEESECAKE PHOTO */
+#cheesecake-photo img {
+    width: 22rem;
+    height: 13.364rem;
+    border-radius: 0.75rem;
+    padding: 0.75rem 0.75rem 1.5rem 0.75rem;
+}
