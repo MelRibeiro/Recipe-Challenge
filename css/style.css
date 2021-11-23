@@ -15,6 +15,8 @@
 
 }
 
+/*====================================================================*/
+
 /* RESET CSS */
 * {
     margin: 0;
@@ -22,11 +24,33 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* SCROLL BAR STYLE */
+
+::-webkit-scrollbar {
+    background-color: var(--creater-challenge-color);
+    width: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--creater-challenge-color);
+}
+
+ul {
+    list-style: none;
+}
+
 /*=======================================================================*/
 
 body {
     width: 100vw;
     height: 100vh;
+    max-width: 425px;
 }
 
 /* HEADER */
@@ -54,8 +78,65 @@ header p {
 
 /* CHEESECAKE PHOTO */
 #cheesecake-photo img {
-    width: 22rem;
-    height: 13.364rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 22rem;
+    max-height: 13.364rem;
     border-radius: 0.75rem;
     padding: 0.75rem 0.75rem 1.5rem 0.75rem;
+}
+
+/* MAIN UL LI */
+
+main .container ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .container .recipe-inf {
+    display: flex;
+    padding: 0.75rem;
+    justify-content: center;
+    align-items: center;
+}
+
+main .container img {
+    margin-right: 0.339rem;
+    width: 0.846rem;
+    height: 0.786rem;
+}
+
+main #time {
+    color: var(--list-and-serving-color);
+}
+
+main .time {
+    font-family: var(--montserrat-font-family);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.5rem;
+    line-height: 0.625rem;
+    text-transform: uppercase;
+    color: var(--source-color);
+}
+
+main .recipe-inf p {
+    font-family: var(--montserrat-font-family);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.625rem;
+    line-height: 0.75rem;
+}
+
+main section .ingredients h2 {
+    font-family: var(--playfair-font-family);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 2rem;
+    padding: 0.1rem;
+    margin-bottom: 1.9rem;
+    margin-left: 0.75rem;
 }
