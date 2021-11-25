@@ -7,11 +7,13 @@
     --list-and-serving-color: hsla(28, 87%, 62%, 1);
     --creater-challenge-color: hsla(0, 0%, 51%, 1);
     --source-color: hsla(0, 0%, 74%, 1);
+    --list-color: hsla(0, 0%, 20%, 1);
+
 
 
     /* font-family variables */
     --playfair-font-family: 'Playfair Display', sans-serif;
-    --montserrat-font-family: 'Montserrat',  sans-serif;
+    --montserrat-font-family: 'Montserrat',  serif;
 
 }
 
@@ -29,11 +31,19 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
+ul {
+    list-style: none;
+}
+
+ol {
+    list-style-position: inside;
+}
+
 /* SCROLL BAR STYLE */
 
 ::-webkit-scrollbar {
     background-color: var(--creater-challenge-color);
-    width: 0.5rem;
+    width: 0.4rem;
     border-radius: 0.5rem;
 }
 
@@ -41,8 +51,8 @@ html {
     background-color: var(--creater-challenge-color);
 }
 
-ul {
-    list-style: none;
+::selection {
+    background: var(--creater-challenge-color);
 }
 
 /*=======================================================================*/
@@ -50,30 +60,38 @@ ul {
 body {
     width: 100vw;
     height: 100vh;
-    max-width: 425px;
 }
 
 /* HEADER */
 header h1 {
     font-family: var(--playfair-font-family);
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1.5rem;
     line-height: 2rem;
     margin: 2rem 2.563rem 0.75rem 0.75rem;
 }
 
-header img {
-    padding: 0.938rem 0.75rem 0 0.75rem;
+header .description {
+    display: flex;
+    margin-left: 0.75rem;
+    align-items: flex-start;
 }
+
+
+header img {
+    margin-top: 0.2rem;
+    margin-right: 0.3rem;
+}
+
 header p {
+    overflow: hidden;
     font-family: var(--montserrat-font-family);
     font-style: italic;
+    text-align: justify;
     font-weight: 500;
     font-size: 0.75rem;
     line-height: 0.938rem;
     width: 20rem;
-    height: 5.5rem;
-    margin: 0.75rem 1.188rem 0 2.25rem;
 }
 
 /* CHEESECAKE PHOTO */
@@ -81,25 +99,27 @@ header p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    max-width: 22rem;
-    max-height: 13.364rem;
+    max-height: 25.438rem;
+    max-width: 66rem;
     border-radius: 0.75rem;
     padding: 0.75rem 0.75rem 1.5rem 0.75rem;
 }
 
-/* MAIN UL LI */
+/*============================================================*/
 
-main .container ul {
+/* ARTICLE UL LI */
+
+main .container article ul {
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 main .container .recipe-inf {
     display: flex;
     padding: 0.75rem;
-    justify-content: center;
-    align-items: center;
+}
+
+main .container .recipe-inf ul li {
+    padding: 0.75rem;
 }
 
 main .container img {
@@ -108,7 +128,7 @@ main .container img {
     height: 0.786rem;
 }
 
-main #time {
+main #serving {
     color: var(--list-and-serving-color);
 }
 
@@ -125,18 +145,171 @@ main .time {
 main .recipe-inf p {
     font-family: var(--montserrat-font-family);
     font-style: normal;
-    font-weight: 500;
+    font-weight: normal;
     font-size: 0.625rem;
     line-height: 0.75rem;
 }
 
-main section .ingredients h2 {
+
+/*===================================================*/
+
+/* SECTION */
+
+main section h2 {
     font-family: var(--playfair-font-family);
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: bold;
     line-height: 2rem;
     padding: 0.1rem;
-    margin-bottom: 1.9rem;
+    margin-bottom: 0.813rem;
     margin-left: 0.75rem;
+}
+
+main section .ingredients h3 {
+    font-family: var(--playfair-font-family);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.313rem;
+    padding: 0 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+main section ul div {
+    display: flex;
+}
+
+main section ul div input {
+    margin-left: 0.813rem;
+    margin-right: 0.5rem;
+}
+
+main section ul div li {
+    font-family: var(--montserrat-font-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.563rem;
+    color: var(--list-color);
+}
+
+#ingredients-title {
+    margin-top: 2.438rem;
+}
+
+main section ul div li span {
+    font-weight: 700;
+}
+
+main section ul div li .suggestion {
+    font-weight: 500;
+}
+
+/*=========================================================*/
+
+/* SECTION INSTRUCTIONS*/
+
+section .instructions h2 {
+    font-size: 1.5rem;
+    margin-top: 1.875rem;
+    margin-bottom: 1.625rem;
+}
+
+/* OL STYLE */
+
+ol {
+    display: flex;
+    flex-direction: column;
+    counter-reset: my-awesome-counter;
+    list-style: none;
+    padding-left: 3.75rem;
+}
+ol li {
+    margin: 0 1.625rem 2.188rem 0;
+    counter-increment: my-awesome-counter;
+    position: relative;
+}
+ol li::before {
+    font-family: var(--montserrat-font-family);
+    font-weight: 700;
+    content: counter(my-awesome-counter);
+    color: #fff;
+    font-size: 1.5rem;
+    position: absolute;
+    --size: 2.25rem;
+    left: calc(-1 * var(--size) - 10px);
+    line-height: var(--size);
+    width: var(--size);
+    height: var(--size);
+    top: 0;
+    background: var(--list-and-serving-color);
+    border-radius: 0.375rem;
+    text-align: center;
+}
+
+ol li {
+    font-family: var(--montserrat-font-family);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+
+ol li span {
+    font-weight: 700;
+}
+
+section .instructions p {
+    color: var(--source-color);
+    font-family: var(--montserrat-font-family);
+    font-weight: 400;
+    font-size: 0.75rem;
+    padding-left: 0.75rem;
+}
+
+/*==========================================================*/
+
+/* FOOTER */
+
+footer p {
+    text-align: center;
+    font-family: var(--montserrat-font-family);
+    font-weight: 500;
+    color: var(--creater-challenge-color);
+    font-size: 0.875rem;
+    margin-top: 6.25rem;
+    margin-bottom: 1.5rem;
+
+}
+
+footer p a {
+    color: var(--creater-challenge-color);
+    font-weight: 700;
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        max-width: 960px;
+        margin: auto;
+    }
+
+    header p {
+        width: 33rem;
+        height: 3.4rem;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between
+    }
+
+    article {
+        background-color: #fff;
+        box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1);
+        border-radius: 0.75rem;
+    }
+
+
 }
