@@ -102,7 +102,7 @@ header p {
     max-height: 25.438rem;
     max-width: 66rem;
     border-radius: 0.75rem;
-    padding: 0.75rem 0.75rem 1.5rem 0.75rem;
+    margin: 0.75rem 0.75rem 1.5rem 0.75rem;
 }
 
 /*============================================================*/
@@ -302,14 +302,18 @@ footer p a {
     .wrapper {
         display: flex;
         flex-direction: row-reverse;
-        justify-content: space-between
+        justify-content: space-between;
     }
 
     article {
         background-color: #fff;
         box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.1);
         border-radius: 0.75rem;
+        padding: 2rem;
     }
 
+    article ul {
+        flex-direction: column;
+    }
 
 }
